@@ -58,18 +58,18 @@ pub mod NeuralNetwork {
             assert!(inputs.len() == self.input_nodes, "Input length does not match input nodes P={} N={}", inputs.len(), self.input_nodes);
             
             let input_nodes = Matrix::new(inputs, self.input_nodes, 1);
-            println!("Input Nodes: {:?}", input_nodes);
+            // println!("Input Nodes: {:?}", input_nodes);
 
             let mut hidden_nodes = self.weights_ih.multiply(&input_nodes);
             hidden_nodes.mut_add(&self.bias_h);
             hidden_nodes.mut_map(NeuralNetwork::sigmoid);
-            println!("Hidden Nodes: {:?}", hidden_nodes);
+            // println!("Hidden Nodes: {:?}", hidden_nodes);
 
             let mut output = self.weights_ho.multiply(&hidden_nodes);
             output.mut_add(&self.bias_o);
             output.mut_map(NeuralNetwork::sigmoid);
 
-            println!("Output Nodes: {:?}", output);
+            // println!("Output Nodes: {:?}", output);
 
             output.get_result()
         }

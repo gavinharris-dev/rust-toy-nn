@@ -13,13 +13,13 @@ fn main() {
     ];
 
 
-    let mut network: neural_network::NeuralNetwork::NeuralNetwork = neural_network::NeuralNetwork::NeuralNetwork::new(2, 3, 1);
+    let mut network: neural_network::NeuralNetwork::NeuralNetwork = neural_network::NeuralNetwork::NeuralNetwork::new(2, 12, 1);
 
     
     println!("{}", network.serialize());
 
     let mut rng = rand::thread_rng();
-    for _i in 0..190000 {
+    for _i in 0..300000 {
         let index = rng.gen_range(0..training_data.len());
 
         let data = training_data[index].clone();
