@@ -46,7 +46,7 @@ pub mod NeuralNetwork {
                 weights_ho,
                 bias_h,
                 bias_o,
-                learning_rate: 0.1,
+                learning_rate: 0.05,
             }
         }
 

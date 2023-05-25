@@ -70,10 +70,10 @@ pub mod Matrix {
             let cols = self.data[0].len();
             let other_rows = other.data.len();
             let other_cols = other.data[0].len();
-            println!(
-                "rows: {:?} cols: {:?} other_rows: {:?} other_cols: {:?}",
-                rows, cols, other_rows, other_cols
-            );
+            // println!(
+            //     "rows: {:?} cols: {:?} other_rows: {:?} other_cols: {:?}",
+            //     rows, cols, other_rows, other_cols
+            // );
             assert!(
                 rows == other_rows,
                 "ROWS: Self: {:?} Other: {:?}",
@@ -105,10 +105,10 @@ pub mod Matrix {
             let cols = self.data[0].len();
             let other_rows = other.data.len();
             let other_cols = other.data[0].len();
-            println!(
-                "rows: {:?} cols: {:?} other_rows: {:?} other_cols: {:?}",
-                rows, cols, other_rows, other_cols
-            );
+            // println!(
+            //     "rows: {:?} cols: {:?} other_rows: {:?} other_cols: {:?}",
+            //     rows, cols, other_rows, other_cols
+            // );
             assert!(
                 rows == other_rows,
                 "ROWS: Self: {:?} Other: {:?}",
@@ -145,10 +145,10 @@ pub mod Matrix {
             let other_cols = other.data[0].len();
             // Columns of Self must equal rows of other
 
-            println!(
-                "rows: {:?} cols: {:?} other_rows: {:?} other_cols: {:?}",
-                rows, cols, other_rows, other_cols
-            );
+            // println!(
+            //     "rows: {:?} cols: {:?} other_rows: {:?} other_cols: {:?}",
+            //     rows, cols, other_rows, other_cols
+            // );
             assert!(cols == other_rows, "Self: {:?} Other: {:?}", self, other);
 
             let mut result: Vec<Vec<f64>> = vec![vec![0.0; other_cols]; rows];

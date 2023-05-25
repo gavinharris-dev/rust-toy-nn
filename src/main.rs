@@ -8,18 +8,18 @@ fn main() {
     let training_data = vec![
         (vec![0.0, 0.0], vec![0.0]),
         (vec![0.0, 1.0], vec![1.0]),
-        (vec![1.0, 0.0], vec![1.0]),
         (vec![1.0, 1.0], vec![0.0]),
+        (vec![1.0, 0.0], vec![1.0]),
     ];
 
 
     let mut network: neural_network::NeuralNetwork::NeuralNetwork = neural_network::NeuralNetwork::NeuralNetwork::new(2, 3, 1);
 
-    // println!("{}", network.serialize());
-
+    
+    println!("{}", network.serialize());
 
     let mut rng = rand::thread_rng();
-    for _i in 0..90000 {
+    for _i in 0..190000 {
         let index = rng.gen_range(0..training_data.len());
 
         let data = training_data[index].clone();
@@ -29,13 +29,13 @@ fn main() {
 
     println!("{}", network.serialize());
     let guess = network.feed_forward(vec![1.0, 0.0]);
-    println!("{:?}", guess);
+    println!("1 xor 0 === 1: {:?}", guess);
 
     let guess = network.feed_forward(vec![0.0, 0.0]);
-    println!("{:?}", guess);
+    println!("0 xor 0 === 0: {:?}", guess);
     let guess = network.feed_forward(vec![0.0, 1.0]);
-    println!("{:?}", guess);
+    println!("0 xor 1 === 1: {:?}", guess);
     let guess = network.feed_forward(vec![1.0, 1.0]);
-    println!("{:?}", guess);
+    println!("1 xor 1 === 0: {:?}", guess);
 
 }
